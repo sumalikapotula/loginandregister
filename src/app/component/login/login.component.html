@@ -1,0 +1,27 @@
+<body>
+    <div class="main">
+        <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="login(form.value)">
+            <div class="heading"> LOGIN </div>
+            <div>
+                <mat-form-field appearance="outline" class="field">
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" required>
+                    <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
+                    <mat-icon matSuffix> email </mat-icon>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="field">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                    <mat-error *ngIf="hasError('email','required')">password is required</mat-error>
+                    <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+            <div class="redirect">
+                <button [routerLink]="['/register']" class="createAccount">Create Account here</button>
+                <button type="submit" class="Button" mat-stroked-button (click)="openSnackBar()"> LOGIN </button>
+            </div>
+        </form>
+    </div>
+</body>
