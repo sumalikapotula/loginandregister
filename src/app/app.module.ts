@@ -17,14 +17,18 @@ import { MatMenuModule } from '@angular/material/menu';
 import {​​​​​​​​ FormsModule, ReactiveFormsModule }​​​​​​​​ from'@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HomepageComponent } from './component/homepage/homepage.component';
-
+import { ToolbarComponent } from './component/toolbar/toolbar.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatRadioModule } from '@angular/material/radio';
+import {MatSelectModule} from '@angular/material/select';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
-    HomepageComponent
+    HomepageComponent,
+    ToolbarComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +43,10 @@ import { HomepageComponent } from './component/homepage/homepage.component';
     MatNativeDateModule,
     MatMenuModule,
     FormsModule, ReactiveFormsModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatRadioModule,
+    MatSelectModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

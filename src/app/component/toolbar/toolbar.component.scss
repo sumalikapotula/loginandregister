@@ -1,0 +1,51 @@
+.toolbar{
+    background: rgb(127, 219, 240);
+    padding: 0%;
+    width: 100%;
+    min-width: 800px;
+}
+.searchCard{
+    width:35%;
+    background: #ffff;
+    margin-left: 20%;
+    border-radius: 5px;
+}
+.searchInput{
+    outline: none;
+    border: none;
+    font-size: inherit;
+}
+.search{
+    color: rgb(114, 104, 104);
+}
+.searchButton{
+    border: none;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.heading{
+    color:royalblue;
+    font-size: 25px;
+    font-weight: bold;
+    margin-left: 10%;
+}
+.img {
+    border-radius: 50%;
+}
+.settings {
+    flex: 0.25  auto;
+} 
+::ng-deep{
+    .mat-menu-panel .userDetail{
+        min-height: 200px;
+        width: 200px;
+        padding: 8px;
+    }
+}
+.name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}    
+.email {
+    margin-bottom: 30px;
+} 

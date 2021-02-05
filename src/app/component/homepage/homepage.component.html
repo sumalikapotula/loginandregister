@@ -1,62 +1,66 @@
 <!-- <p>homepage works!</p> -->
 
 <body>
-    <div class="heading"> EMPLOYEE INFORMATION </div>
+
+    <app-toolbar></app-toolbar>
     <div class="main">
         <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="register(form.value)">
-            <div class="personal">PERSONAL INFORMATION:</div>
-            <div class="btn1">
-                <mat-form-field appearance="outline" class="field">
-                    <mat-label>First Name</mat-label>
-                    <input matInput type="text" placeholder="firstname" formControlName="firstname" required>
-                    <mat-error *ngIf="hasError('firstname','required')">name is required</mat-error>
-                </mat-form-field>
-                <mat-form-field appearance="outline" class=" field field1">
-                    <mat-label>Last Name</mat-label>
-                    <input matInput type="text" placeholder="lastname" formControlName="lastname" required>
-                    <mat-error *ngIf="hasError('lastname','required')">name is required</mat-error>
-                </mat-form-field>
-            </div>
+            <div *ngIf="personaldetails">
+                <div class="personal">PERSONAL INFORMATION:</div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>First Name</mat-label>
+                        <input matInput type="text" placeholder="firstname" formControlName="firstname" required>
+                        <mat-error *ngIf="hasError('firstname','required')">name is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class=" field field1">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput type="text" placeholder="lastname" formControlName="lastname" required>
+                        <mat-error *ngIf="hasError('lastname','required')">name is required</mat-error>
+                    </mat-form-field>
+                </div>
 
-            <div class="btn1">
-                <mat-form-field appearance="outline" class="field">
-                    <mat-label>Gender</mat-label>
-                    <input matInput type="text" placeholder="gender" formControlName="gender" required>
-                    <mat-error *ngIf="hasError('gender','required')">gender is required</mat-error>
-                </mat-form-field>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Gender</mat-label>
+                        <input matInput type="text" placeholder="gender" formControlName="gender" required>
+                        <mat-error *ngIf="hasError('gender','required')">gender is required</mat-error>
+                    </mat-form-field>
 
-                <mat-form-field appearance="outline" class="field field1">
-                    <mat-label>Email</mat-label>
-                    <input matInput type="text" placeholder="email" formControlName="email" required>
-                    <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
-                </mat-form-field>
-            </div>
-            <div class="btn1">
-                <mat-form-field appearance="outline" class="field">
-                    <mat-label>State</mat-label>
-                    <input matInput type="text" placeholder="state" formControlName="state" required>
-                    <mat-error *ngIf="hasError('state','required')">state is required</mat-error>
-                </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Email</mat-label>
+                        <input matInput type="text" placeholder="email" formControlName="email" required>
+                        <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>State</mat-label>
+                        <input matInput type="text" placeholder="state" formControlName="state" required>
+                        <mat-error *ngIf="hasError('state','required')">state is required</mat-error>
+                    </mat-form-field>
 
-                <mat-form-field appearance="outline" class="field field1">
-                    <mat-label>Phone Number</mat-label>
-                    <input matInput type="text" placeholder="phonenumber" formControlName="phonenumber" required>
-                    <mat-error *ngIf="hasError('phonenumber','required')">number is required</mat-error>
-                </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Phone Number</mat-label>
+                        <input matInput type="text" placeholder="phonenumber" formControlName="phonenumber" required>
+                        <mat-error *ngIf="hasError('phonenumber','required')">number is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <mat-form-field class="dateofbirth" appearance="outline">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="date" required>
+                        <mat-error *ngIf="hasError('date','required')">date of birth is required</mat-error>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div>
+                    <button class="ButtonC" mat-stroked-button *ngIf="personaldetails"
+                        (click)="resetfalse()">CONTINUE</button>
+                </div>
             </div>
-            <div>
-                <mat-form-field class="dateofbirth" appearance="outline">
-                    <mat-label>Date of Birth</mat-label>
-                    <input matInput [matDatepicker]="picker" formControlName="date" required>
-                    <mat-error *ngIf="hasError('date','required')">date of birth is required</mat-error>
-                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                    <mat-datepicker [dateClass]="dateClass" #picker></mat-datepicker>
-                </mat-form-field>
-            </div>
-            <div>
-                <button class="ButtonC" mat-stroked-button (click)="resetfalse()">CONTINUE</button>
-            </div>
-            <div *ngIf="!reset">
+            <div *ngIf="!personaldetails && education">
                 <div class="personal">FAMILY INFORMATION</div>
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
@@ -70,40 +74,150 @@
                         <mat-error *ngIf="hasError('mothername','required')">mothername is required</mat-error>
                     </mat-form-field>
                 </div>
-
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
-                        <mat-label>Address</mat-label>
-                        <input matInput type="text" placeholder="address" formControlName="address" required>
-                        <mat-error *ngIf="hasError('address','required')">address is required</mat-error>
+                        <mat-label>Father Occupation</mat-label>
+                        <input matInput type="text" placeholder="father occupation" formControlName="occupation"
+                            required>
+                        <mat-error *ngIf="hasError('occupation','required')">occupation is required</mat-error>
                     </mat-form-field>
-
                     <mat-form-field appearance="outline" class="field field1">
-                        <mat-label>Pincode</mat-label>
-                        <input matInput type="text" placeholder="pincode" formControlName="pincode" required>
-                        <mat-error *ngIf="hasError('pincode','required')">pincode is required</mat-error>
+                        <mat-label>Mother Occupation</mat-label>
+                        <input matInput type="text" placeholder="mother occupation" formControlName="occupation"
+                            required>
+                        <mat-error *ngIf="hasError('occupation','required')">occupation is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Father Age</mat-label>
+                        <input matInput type="text" placeholder="father age" formControlName="age" required>
+                        <mat-error *ngIf="hasError('age','required')">age is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Mother Age</mat-label>
+                        <input matInput type="text" placeholder="mother age" formControlName="age" required>
+                        <mat-error *ngIf="hasError('age','required')">age is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Father Mobile Number</mat-label>
+                        <input matInput type="text" placeholder="father phonenumber" formControlName="phonenumber"
+                            required>
+                        <mat-error *ngIf="hasError('phonenumber','required')">phone number is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Mother Mobile Number</mat-label>
+                        <input matInput type="text" placeholder="motherphonenumber" formControlName="phonenumber"
+                            required>
+                        <mat-error *ngIf="hasError('phonenumber','required')">phone number is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="address">
+                        <mat-label>Address</mat-label>
+                        <input matInput type="text" placeholder="Street Locality and Area" formControlName="address"
+                            required>
+                        <mat-error *ngIf="hasError('address','required')">address is required</mat-error>
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="ButtonC" mat-stroked-button (click)="continue()">CONTINUE</button>
+                    <button class="ButtonC" mat-stroked-button *ngIf="!personaldetails"
+                        (click)="continue()">CONTINUE</button>
                 </div>
             </div>
-            <div *ngIf="!hides">
+            <div *ngIf="!education && professionaldetails">
                 <div class="personal">EDUCATION & PROFESSIONAL INFORMATION:</div><br>
-                <div class="personal">GRADUATION DETAILS</div>
+                <div class="personal1">GRADUATION DETAILS</div>
                 <div class="btn1">
+
+
+
+
+
                     <mat-form-field appearance="outline" class="field">
                         <mat-label>Graduation Type</mat-label>
-                        <input matInput type="text" placeholder="Graduation Type" formControlName="Graduation" required>
+                        <mat-select [(ngModel)]="graduation" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let graduation of graduate" [value]="graduation">{{graduation}}
+                            </mat-option>
+                        </mat-select>
+                        <input matInput type="text" formControlName="Graduation" required>
                         <mat-error *ngIf="hasError('Graduation','required')">graduation is required</mat-error>
                     </mat-form-field>
                     <mat-form-field appearance="outline" class="field field1">
+
+
                         <mat-label>Specilization</mat-label>
+                        <mat-select *ngIf="graduation" [(ngModel)]="specilization"
+                            [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let specilization of specilize" [value]="specilization">
+                                {{specilization}}</mat-option>
+                        </mat-select>
                         <input matInput type="text" placeholder="Specilization" formControlName="Specilization"
                             required>
                         <mat-error *ngIf="hasError('Specilization','required')">Specilization is required</mat-error>
                     </mat-form-field>
                 </div>
+
+
+
+
+
+
+
+
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>College Name</mat-label>
+                        <input matInput type="text" placeholder="College Name" formControlName="CollegeName" required>
+                        <mat-error *ngIf="hasError('CollegeName','required')">College name is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Degree Percentage</mat-label>
+                        <input matInput type="text" placeholder="Degree Percentage" formControlName="Percentage"
+                            required>
+                        <mat-error *ngIf="hasError('Percentage','required')">Percentage is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="personal1">12th DETAILS</div>
+                <div class="btn1">
+
+
+
+
+
+
+
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>12th Type</mat-label>
+                        <mat-select [(ngModel)]="intermediate" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let intermediate of inter" [value]="intermediate">{{intermediate}}
+                            </mat-option>
+                        </mat-select>
+                        <input matInput type="text" formControlName="Graduation" required>
+                        <mat-error *ngIf="hasError('Graduation','required')">12th type is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Specilization</mat-label>
+                        <mat-select *ngIf="intermediate" [(ngModel)]="course" [ngModelOptions]="{standalone: true}">
+                            <mat-option *ngFor="let course of courses" [value]="course">{{course}}</mat-option>
+                        </mat-select>
+                        <input matInput type="text" placeholder="Specilization" formControlName="Specilization"
+                            required>
+                        <mat-error *ngIf="hasError('Specilization','required')">Specilization is required</mat-error>
+                    </mat-form-field>
+                </div>
+
+
+
+
+
+
+
+
+
 
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
@@ -118,35 +232,7 @@
                         <mat-error *ngIf="hasError('Percentage','required')">Percentage is required</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="personal">INTERMEDIATE DETAILS</div>
-                <div class="btn1">
-                    <mat-form-field appearance="outline" class="field">
-                        <mat-label>Graduation Type</mat-label>
-                        <input matInput type="text" placeholder="Graduation Type" formControlName="Graduation" required>
-                        <mat-error *ngIf="hasError('Graduation','required')">graduation is required</mat-error>
-                    </mat-form-field>
-                    <mat-form-field appearance="outline" class="field field1">
-                        <mat-label>Specilization</mat-label>
-                        <input matInput type="text" placeholder="Specilization" formControlName="Specilization"
-                            required>
-                        <mat-error *ngIf="hasError('Specilization','required')">Specilization is required</mat-error>
-                    </mat-form-field>
-                </div>
-
-                <div class="btn1">
-                    <mat-form-field appearance="outline" class="field">
-                        <mat-label>College Name</mat-label>
-                        <input matInput type="text" placeholder="College Name" formControlName="CollegeName" required>
-                        <mat-error *ngIf="hasError('CollegeName','required')">College name is required</mat-error>
-                    </mat-form-field>
-
-                    <mat-form-field appearance="outline" class="field field1">
-                        <mat-label>Percentage</mat-label>
-                        <input matInput type="text" placeholder="Percentage" formControlName="Percentage" required>
-                        <mat-error *ngIf="hasError('Percentage','required')">Percentage is required</mat-error>
-                    </mat-form-field>
-                </div>
-                <div class="personal">SSC DETAILS</div>
+                <div class="personal1">SSC DETAILS</div>
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
                         <mat-label>School Name</mat-label>
@@ -160,6 +246,16 @@
                         <mat-error *ngIf="hasError('Percentage','required')">Percentage is required</mat-error>
                     </mat-form-field>
                 </div>
+                <div class="personal1">PROFESSIONAL INFORMATION</div>
+                <mat-radio-group aria-label="Select an option" class="field">
+                    <mat-radio-button value="1" *ngIf="fresherdetails" (click)="detail()">Fresher</mat-radio-button>
+                    <mat-radio-button value="2" (click)="details()">Experienced</mat-radio-button>
+                </mat-radio-group>
+                <div class="btn">
+                    <button class="Button">SUBMIT</button>
+                </div>
+            </div>
+            <div *ngIf="!professionaldetails">
                 <div class="personal">PROFESSIONAL DETAILS</div>
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
@@ -174,8 +270,50 @@
                         <mat-error *ngIf="hasError('Location','required')">Location is required</mat-error>
                     </mat-form-field>
                 </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Experience</mat-label>
+                        <input matInput type="text" placeholder="Experience" formControlName="Experience" required>
+                        <mat-error *ngIf="hasError('Experience','required')">Experience is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Technology</mat-label>
+                        <input matInput type="text" placeholder="Technology" formControlName="Technology" required>
+                        <mat-select>
+                            <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}
+                            </mat-option>
+                        </mat-select>
+                        <mat-error *ngIf="hasError('Technology','required')">Technology is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label>Designation</mat-label>
+                        <input matInput type="text" placeholder="Designation" formControlName="Designation" required>
+                        <mat-error *ngIf="hasError('Designation','required')">Designation is required</mat-error>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label>Package</mat-label>
+                        <input matInput type="text" placeholder="Package" formControlName="Package" required>
+                        <mat-error *ngIf="hasError('Package','required')">Package is required</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="btn1">
+                    <mat-form-field appearance="outline" class="field">
+                        <mat-label> Expected Location</mat-label>
+                        <input matInput type="text" placeholder="Location" formControlName="Location" required>
+                        <mat-error *ngIf="hasError('Location','required')">Location is required</mat-error>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline" class="field field1">
+                        <mat-label> Expected Package</mat-label>
+                        <input matInput type="text" placeholder="Package" formControlName="Package" required>
+                        <mat-error *ngIf="hasError('Package','required')">Package is required</mat-error>
+                    </mat-form-field>
+                </div>
                 <div class="btn">
-                    <button class="Button" mat-stroked-button (click)="openSnackBar()">SUBMIT</button>
+                    <button class="Button" mat-stroked-button (click)="openSnackBar()">SUBMIT DETAILS</button>
                 </div>
             </div>
         </form>

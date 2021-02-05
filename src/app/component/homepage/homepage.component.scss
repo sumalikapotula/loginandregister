@@ -8,9 +8,8 @@ body{
     font-size: 35px;
     font-weight: bold;
     color:white;
-    height: 50px;
+    height: 70px;
     margin-bottom: 30px;
-    margin-top:2%;
     background-color:royalblue;
 }
 .personal{
@@ -20,7 +19,18 @@ body{
     font-size: 15px;
     font-weight: bold;
     color:white;
-    margin-left: 20%
+    margin-left: 20%;
+    margin-top: 5%;
+}
+.personal1{
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 15px;
+    font-weight: bold;
+    color:white;
+    margin-left: 20%;
+    
 }
 .main{
     width: 100%;
@@ -60,4 +70,21 @@ body{
 .dateofbirth{
     width: 720px;
     margin-left: 20%
+}
+.address{
+    width: 720px;
+    margin-left: 20%
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+::ng-deep{
+    .mat-radio-button.mat-accent .mat-radio-inner-circle{
+        background-color: #f5eff1;
+    }
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+        border-color: rgb(44, 44, 44);
+    }
 }
