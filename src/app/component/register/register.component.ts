@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
     return '';
   }
   constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar) { }
-  openSnackBar(){
+  registerMessage(){
     this.snackbar.open('Registered','succesfully',{
         duration:1500
     });

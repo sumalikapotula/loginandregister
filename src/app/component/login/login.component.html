@@ -5,22 +5,26 @@
             <div>
                 <mat-form-field appearance="outline" class="field">
                     <mat-label>Email</mat-label>
-                    <input matInput type="text" formControlName="email" required>
+                    <input matInput type="text" formControlName="email" required [(ngModel)]="email">
                     <mat-error *ngIf="hasError('email','required')">email is required</mat-error>
                     <mat-icon matSuffix> email </mat-icon>
                 </mat-form-field>
+                <p> {{email}} </p>
             </div>
             <div>
                 <mat-form-field appearance="outline" class="field">
                     <mat-label>Password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
-                    <mat-error *ngIf="hasError('email','required')">password is required</mat-error>
+                    <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required
+                        [(ngModel)]="password">
+                    <mat-error *ngIf="hasError('password','required')">password is required</mat-error>
                     <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
                 </mat-form-field>
+                <p> {{password}} </p>
             </div>
             <div class="redirect">
                 <button [routerLink]="['/register']" class="createAccount">Create Account here</button>
-                <button [routerLink]="['/homepage']" type="submit" class="Button" mat-stroked-button (click)="openSnackBar()"> LOGIN </button>
+                <button [routerLink]="['/homepage']" type="submit" class="Button" mat-stroked-button
+                    (click)="loginMessage()"> LOGIN </button>
             </div>
         </form>
     </div>

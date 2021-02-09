@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 
 @Component({
@@ -9,13 +9,14 @@ import { MatSnackBar} from '@angular/material/snack-bar';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-
+  @Input() email: any;
+  @Input() password: any;
   hide = true;
   form: any;
-  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar) { }
-  openSnackBar(){
-    this.snackbar.open('logged In','succesfully',{
-      duration:1500
+  constructor(private formBuilder: FormBuilder, private snackbar: MatSnackBar) { }
+  loginMessage() {
+    this.snackbar.open('logged In', 'successfully', {
+      duration: 1500
     });
   }
   ngOnInit(): void {

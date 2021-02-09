@@ -38,8 +38,8 @@ export class HomepageComponent implements OnInit {
   get inter(): string[] {
     return Array.from(this.map1.keys());
   }
-  get   courses(): string[] | undefined {
-    return this.map.get(this.intermediate);
+  get courses(): string[] | undefined {
+    return this.map1.get(this.intermediate);
   }
   languages = new FormControl();
   languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
