@@ -1,6 +1,6 @@
-<!-- <p>register works!</p> -->
 
 <body>
+    <app-cmntoolbar></app-cmntoolbar>
     <div class="main">
         <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="register(form.value)">
             <div class="heading"> REGISTRATION FORM </div>
@@ -53,8 +53,7 @@
             </div>
             <div class="btn">
                 <button [routerLink]="['/login']" class="Button">LOGIN</button>
-                <button [routerLink]="['/register']" class="Button" mat-stroked-button
-                    (click)="registerMessage()">REGISTER</button>
+                <button type="submit" class="Button" (click)="registerMessage()">REGISTER</button>
             </div>
         </form>
     </div>

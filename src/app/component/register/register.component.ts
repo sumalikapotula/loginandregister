@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar} from '@angular/material/snack-bar';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/userservice/user.service';
 
 @Component({
   selector: 'app-register',
@@ -18,7 +20,7 @@ export class RegisterComponent implements OnInit {
     }
     return '';
   }
-  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar,private router: Router,private userService: UserService ) { }
   registerMessage(){
     this.snackbar.open('Registered','succesfully',{
         duration:1500
@@ -39,9 +41,20 @@ export class RegisterComponent implements OnInit {
     return this.form.controls[controlName].hasError(errorName);
   }
   register(formValues: any) {
-    // let data = {
-    //   email: formValues.email,
-    //   password: formValues.password
-    // }
+    let data = {
+      firstname: formValues.firstname,
+      lastname: formValues.lastname,
+      gender: formValues.gender,
+      email: formValues.email,
+      password: formValues.password,
+      phonenumber: formValues.phonenumber,
+      date: formValues.date,
+    }
+    if (this.form.valid) {
+      console.log(data);
+      this.userService.registration(data);
+      console.log("data registered successfully");
+      this.router.navigate(['register']);
+    }
   }
 }

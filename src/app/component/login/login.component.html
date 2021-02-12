@@ -1,4 +1,5 @@
 <body>
+    <app-cmntoolbar></app-cmntoolbar>
     <div class="main">
         <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="login(form.value)">
             <div class="heading"> LOGIN </div>
@@ -23,8 +24,7 @@
             </div>
             <div class="redirect">
                 <button [routerLink]="['/register']" class="createAccount">Create Account here</button>
-                <button [routerLink]="['/homepage']" type="submit" class="Button" mat-stroked-button
-                    (click)="loginMessage()"> LOGIN </button>
+                <button type="submit" class="Button" (click)="loginMessage()"> LOGIN </button>
             </div>
         </form>
     </div>

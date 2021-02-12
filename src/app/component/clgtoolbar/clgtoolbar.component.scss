@@ -1,0 +1,44 @@
+.toolbar{
+    background-color: brown;
+    height: 100px;
+    margin-top: 20px;
+}
+.searchCard{
+    width:35%;
+    background: #ffff;
+    margin-left: 20%;
+    border-radius: 5px;
+}
+.searchInput{
+    outline: none;
+    border: none;
+    font-size: inherit;
+}
+.search{
+    color: rgb(114, 104, 104);
+}
+.searchButton{
+    border: none;
+    margin-left: 20px;
+    margin-top: 10px;
+}
+.sidenav .mat-list-option {
+    width: 197px;
+    height: 50px;
+}
+.option {
+    border-radius: 1px;
+    border-top-right-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.menu{
+    color: white;
+    margin-left: 50px;
+}
+.image{
+    margin-left: 500px;
+}
+body{
+    background-image: url("../../../assets/Images/Penn-1200x675.jpg");
+    background-size: cover;
+}

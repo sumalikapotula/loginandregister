@@ -1,7 +1,4 @@
 body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
     background-size: cover;
     background-image: url("../../../assets/Images/abstract-wallpaper-high-definition-background-jpg.jpg");
 }
@@ -16,6 +13,8 @@ body{
     width: 400px;
     height: 350px;
     background-color: rgb(200, 224, 240);
+    margin-left: 700px;
+    margin-top: 200px;
 }
 .heading{
     display: flex;

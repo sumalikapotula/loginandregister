@@ -1,0 +1,20 @@
+<body>
+    <mat-toolbar class="toolbar">
+        <button mat-icon-button (click)="drawer.toggle()">
+            <mat-icon class="menu">menu</mat-icon>
+        </button>
+        <img class="image" src="../../../assets/Images/cropped-2-1.png">
+    </mat-toolbar>
+    <mat-drawer #drawer class="sidenav" mode="side" (mouseleave)="drawer.toggle()" class="slider">
+        <mat-selection-list [multiple]="false ">
+            <mat-list-option class="option">Home</mat-list-option>
+            <mat-list-option class="option" [routerLink]="['/vision']">About Us</mat-list-option>
+            <mat-list-option class="option"  [routerLink]="['/academics']">Academics</mat-list-option>
+            <mat-list-option class="option" [routerLink]="['/login']">Login</mat-list-option>
+            <mat-list-option class="option" [routerLink]="['/register']">Register</mat-list-option>
+            <mat-list-option class="option" [routerLink]="['/department']">Departments</mat-list-option>
+            <mat-list-option class="option">Library</mat-list-option>
+            <mat-list-option class="option">Campus Life</mat-list-option>
+        </mat-selection-list>
+    </mat-drawer>
+</body>

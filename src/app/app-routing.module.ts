@@ -3,11 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './component/login/login.component';
 import { RegisterComponent } from './component/register/register.component';
 import { HomepageComponent } from './component/homepage/homepage.component';
+import { ClgtoolbarComponent } from './component/clgtoolbar/clgtoolbar.component';
+import { DepartmentsComponent } from './component/departments/departments.component';
+import { VisionComponent } from './component/vision/vision.component';
+import { AcademicsComponent } from './component/academics/academics.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
   {path:"register",component:RegisterComponent},
-  {path:"homepage",component:HomepageComponent}
+  {path:"homepage",component:HomepageComponent},
+  {path:"collegetool",component:ClgtoolbarComponent},
+  {path:"department",component:DepartmentsComponent},
+  {path:"vision",component:VisionComponent},
+  {path:"academics",component:AcademicsComponent}
 ];
 
 @NgModule({

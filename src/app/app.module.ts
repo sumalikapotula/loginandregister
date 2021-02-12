@@ -21,14 +21,27 @@ import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import {MatSelectModule} from '@angular/material/select';
-
+import {MatButtonModule} from '@angular/material/button';
+import { ClgtoolbarComponent } from './component/clgtoolbar/clgtoolbar.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatListModule} from '@angular/material/list';
+import { CmntoolbarComponent } from './component/cmntoolbar/cmntoolbar.component';
+import { DepartmentsComponent } from './component/departments/departments.component';
+import { VisionComponent } from './component/vision/vision.component';
+import { AcademicsComponent } from './component/academics/academics.component';
+import {MatTableModule} from '@angular/material/table';
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     RegisterComponent,
     HomepageComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ClgtoolbarComponent,
+    CmntoolbarComponent,
+    DepartmentsComponent,
+    VisionComponent,
+    AcademicsComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +59,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatSnackBarModule,
     MatToolbarModule,
     MatRadioModule,
-    MatSelectModule 
+    MatSelectModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

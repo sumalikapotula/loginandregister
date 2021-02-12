@@ -223,9 +223,9 @@
                 <div class="personal">PROFESSIONAL DETAILS</div>
                 <div class="btn1">
                     <mat-form-field appearance="outline" class="field">
-                        <mat-label>Company Name</mat-label>
+                        <mat-label>Organisation Name</mat-label>
                         <input matInput type="text" placeholder="Company Name" formControlName="CompanyName" required>
-                        <mat-error *ngIf="hasError('CompanyName','required')">Company name is required</mat-error>
+                        <mat-error *ngIf="hasError('CompanyName','required')">Organisation name is required</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="field field1">
@@ -245,8 +245,7 @@
                         <mat-label>Technology</mat-label>
                         <input matInput type="text" placeholder="Technology" formControlName="Technology" required>
                         <mat-select>
-                            <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}
-                            </mat-option>
+                            <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}</mat-option>
                         </mat-select>
                         <mat-error *ngIf="hasError('Technology','required')">Technology is required</mat-error>
                     </mat-form-field>

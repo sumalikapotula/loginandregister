@@ -1,0 +1,35 @@
+body{
+    background-size: cover;
+    background-image: url("../../../assets/Images/286-2860087_minimalist-blue-4k-hd-desktop-wallpaper-for.jpg");
+}
+.button{
+    cursor: pointer;
+}
+::ng-deep{
+    button {
+        padding: 0px 0px;
+    }
+}
+.icons{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 200px; 
+}
+.headers{
+    display: flex;
+    margin-top: 20px; 
+    color: azure;
+}
+.mech{
+    margin-left: 10%;
+}
+.ece{
+    margin-left: 15%;
+}
+.civil{
+    margin-left: 18%
+}
+.cse{
+    margin-left: 20%;
+}
