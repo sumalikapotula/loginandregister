@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import PG from "../../../assets/json/academic.json";
 export interface PeriodicElement {
   programme: any;
   ApprovedIntake: any;
@@ -13,14 +13,6 @@ const ELEMENT_DATA: PeriodicElement[] = [
   {programme:'B.Tech (Computer Science & Engineering)', ApprovedIntake: '120',ApprovedFee: 'Rs. 72,800/- per anum'},
   {programme:'B.Tech (Information Technology)', ApprovedIntake: '60',ApprovedFee: 'Rs. 72,800/- per anum'},
 ];
-const ELEMENT_DATA_1: PeriodicElement[] = [
-  {programme:'M.Tech (Power Electronics & Electric Drives)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-  {programme:'M.Tech (CAD/CAM)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-  {programme:'M.Tech (VLSI System Design)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-  {programme:'M.Tech (Embedded Systems)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-  {programme:'M.Tech (Computer Science & Engineering)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-  {programme:'M.Tech (Computer Science)', ApprovedIntake: '18',ApprovedFee: 'Rs. 60,000/- per anum'},
-];
 @Component({
   selector: 'app-academics',
   templateUrl: './academics.component.html',
@@ -29,7 +21,7 @@ const ELEMENT_DATA_1: PeriodicElement[] = [
 export class AcademicsComponent implements OnInit {
   displayedColumns: string[] = ['programme', 'ApprovedIntake', 'ApprovedFee'];
   dataSource = ELEMENT_DATA;
-  dataSource1 = ELEMENT_DATA_1;
+  dataSource1:PeriodicElement[] = PG;
   constructor() { }
   ngOnInit(): void {
   }

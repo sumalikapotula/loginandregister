@@ -20,16 +20,17 @@ import { HomepageComponent } from './component/homepage/homepage.component';
 import { ToolbarComponent } from './component/toolbar/toolbar.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
-import {MatSelectModule} from '@angular/material/select';
-import {MatButtonModule} from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
+import { MatButtonModule } from '@angular/material/button';
 import { ClgtoolbarComponent } from './component/clgtoolbar/clgtoolbar.component';
-import {MatSidenavModule} from '@angular/material/sidenav';
-import {MatListModule} from '@angular/material/list';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
 import { CmntoolbarComponent } from './component/cmntoolbar/cmntoolbar.component';
 import { DepartmentsComponent } from './component/departments/departments.component';
 import { VisionComponent } from './component/vision/vision.component';
 import { AcademicsComponent } from './component/academics/academics.component';
-import {MatTableModule} from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +64,8 @@ import {MatTableModule} from '@angular/material/table';
     MatButtonModule,
     MatSidenavModule,
     MatListModule,
-    MatTableModule
+    MatTableModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
       console.log(data);
       this.userService.login(data);
         this.router.navigate(['homepage'])
-      
     }
   }
 }

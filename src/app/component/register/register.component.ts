@@ -4,7 +4,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatSnackBar} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservice/user.service';
-
+import { HttpClient } from "@angular/common/http";
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -13,6 +13,7 @@ import { UserService } from 'src/app/services/userservice/user.service';
 export class RegisterComponent implements OnInit {
   hide = true;
   form:any;
+
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
       const date = cellDate.getDate();
@@ -20,7 +21,8 @@ export class RegisterComponent implements OnInit {
     }
     return '';
   }
-  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar,private router: Router,private userService: UserService ) { }
+  info: any = [];
+  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar,private router: Router,private userService: UserService,private httpClient: HttpClient ) { }
   registerMessage(){
     this.snackbar.open('Registered','succesfully',{
         duration:1500
@@ -36,6 +38,10 @@ export class RegisterComponent implements OnInit {
       phonenumber: ['', [Validators.required]],
       date: ['', [Validators.required]],
     });
+    this.httpClient.get("../../../assets/json/data.json").subscribe(data =>{
+      console.log(data);
+      this.info = data;
+    })
   }
   public hasError = (controlName: string, errorName: string) => {
     return this.form.controls[controlName].hasError(errorName);

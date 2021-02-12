@@ -1,0 +1,32 @@
+[
+    {
+        "programme": "M.Tech (Power Electronics & Electric Drives)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    },
+    {
+        "programme": "M.Tech (CAD/CAM)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    },
+    {
+        "programme": "M.Tech (VLSI System Design)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    },
+    {
+        "programme": "M.Tech (Embedded Systems)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    },
+    {
+        "programme": "M.Tech (Computer Science & Engineering)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    },
+    {
+        "programme": "M.Tech (Computer Science)",
+        "ApprovedIntake": "18",
+        "ApprovedFee": "Rs. 60,000/- per anum"
+    }
+]

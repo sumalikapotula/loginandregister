@@ -4,10 +4,10 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  
+
   constructor() { }
-  login(data:any) {
-     data = {
+  login(data: any) {
+    data = {
       email: "sumalika.potula@quixy.com",
       password: "suma@1234"
     }
@@ -15,7 +15,7 @@ export class UserService {
   }
   registration(data: any) {
     data = {
-      firstname:String,
+      firstname: String,
       lastname: String,
       gender: String,
       email: String,
@@ -27,3 +27,7 @@ export class UserService {
   }
 
 }
+// this.httpClient.post("../../../assets/json/data.json").subscribe((data:any) =>{
+    //   console.log(data);
+    //   this.info = data;
+    // });
