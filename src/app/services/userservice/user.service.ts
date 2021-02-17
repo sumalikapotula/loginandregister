@@ -15,19 +15,14 @@ export class UserService {
   }
   registration(data: any) {
     data = {
-      firstname: String,
-      lastname: String,
+      firstName: String,
+      lastName: String,
       gender: String,
       email: String,
       password: String,
-      phonenumber: String,
+      phoneNumber: String,
       date: String,
     }
     return data;
   }
-
 }
-// this.httpClient.post("../../../assets/json/data.json").subscribe((data:any) =>{
-    //   console.log(data);
-    //   this.info = data;
-    // });

@@ -1,19 +1,19 @@
 
 <body>
-    <app-cmntoolbar></app-cmntoolbar>
+    <app-commontoolbar></app-commontoolbar>
     <div class="main">
         <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="register(form.value)" >
             <div class="heading"> REGISTRATION FORM </div>
             <div class="btn1">
                 <mat-form-field appearance="outline" class="field">
                     <mat-label>First Name</mat-label>
-                    <input matInput type="text" placeholder="firstname" formControlName="firstname" required>
-                    <mat-error *ngIf="hasError('firstname','required')">name is required</mat-error>
+                    <input matInput type="text" placeholder="firstname" formControlName="firstName" required>
+                    <mat-error *ngIf="hasError('firstName','required')">name is required</mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="field1">
                     <mat-label>Last Name</mat-label>
-                    <input matInput type="text" placeholder="lastname" formControlName="lastname" required>
-                    <mat-error *ngIf="hasError('lastname','required')">name is required</mat-error>
+                    <input matInput type="text" placeholder="lastname" formControlName="lastName" required>
+                    <mat-error *ngIf="hasError('lastName','required')">name is required</mat-error>
                 </mat-form-field>
             </div>
             <div class="btn1">
@@ -38,8 +38,8 @@
 
                 <mat-form-field appearance="outline" class="field1">
                     <mat-label>Phone Number</mat-label>
-                    <input matInput type="text" placeholder="phonenumber" formControlName="phonenumber" required>
-                    <mat-error *ngIf="hasError('phonenumber','required')">number is required</mat-error>
+                    <input matInput type="text" placeholder="phonenumber" formControlName="phoneNumber" required>
+                    <mat-error *ngIf="hasError('phoneNumber','required')">number is required</mat-error>
                 </mat-form-field>
             </div>
             <div>

@@ -1,18 +1,18 @@
 <body>
-    <app-cmntoolbar></app-cmntoolbar>
+    <app-commontoolbar></app-commontoolbar>
     <h1>Under Graduate Programmes:</h1>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
         <ng-container class="head" matColumnDef="programme">
             <th mat-header-cell *matHeaderCellDef>Programme </th>
             <td mat-cell *matCellDef="let element"> {{element.programme}} </td>
         </ng-container>
-        <ng-container class="head" matColumnDef="ApprovedIntake">
+        <ng-container class="head" matColumnDef="approvedIntake">
             <th mat-header-cell *matHeaderCellDef> ApprovedIntake </th>
-            <td mat-cell *matCellDef="let element"> {{element.ApprovedIntake}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.approvedIntake}} </td>
         </ng-container>
-        <ng-container class="head" matColumnDef="ApprovedFee">
+        <ng-container class="head" matColumnDef="approvedFee">
             <th mat-header-cell *matHeaderCellDef>ApprovedFee </th>
-            <td mat-cell *matCellDef="let element"> {{element.ApprovedFee}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.approvedFee}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
@@ -23,13 +23,13 @@
             <th mat-header-cell *matHeaderCellDef>Programme </th>
             <td mat-cell *matCellDef="let element"> {{element.programme}} </td>
         </ng-container>
-        <ng-container class="head" matColumnDef="ApprovedIntake">
+        <ng-container class="head" matColumnDef="approvedIntake">
             <th mat-header-cell *matHeaderCellDef> ApprovedIntake </th>
-            <td mat-cell *matCellDef="let element"> {{element.ApprovedIntake}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.approvedIntake}} </td>
         </ng-container>
-        <ng-container class="head" matColumnDef="ApprovedFee">
+        <ng-container class="head" matColumnDef="approvedFee">
             <th mat-header-cell *matHeaderCellDef>ApprovedFee </th>
-            <td mat-cell *matCellDef="let element"> {{element.ApprovedFee}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.approvedFee}} </td>
         </ng-container>
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>

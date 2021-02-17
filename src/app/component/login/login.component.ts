@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
 import { UserService } from '../../services/userservice/user.service';
 import { Router } from '@angular/router';
 
@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   @Input() email: any;
   @Input() password: any;
   hide = true;
@@ -17,7 +19,9 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private router: Router, private snackbar: MatSnackBar,private userService: UserService) { }
   loginMessage() {
     this.snackbar.open('logged In', 'successfully', {
-      duration: 1500
+      duration: 2500,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
     });
   }
   ngOnInit(): void {
@@ -37,7 +41,7 @@ export class LoginComponent implements OnInit {
     if (this.form.valid) {
       console.log(data);
       this.userService.login(data);
-        this.router.navigate(['homepage'])
+      this.router.navigate(['homepage'])
     }
   }
 }

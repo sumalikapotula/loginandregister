@@ -1,22 +1,22 @@
 [
     {
         "id": 1,
-        "firstname": "sumalika",
-        "lastname" : "Potula",
+        "firstName": "sumalika",
+        "lastName" : "Potula",
         "gender": "female",
         "email" : "sumalika.potula@gmail.com",
         "password" : "suma@123",
-        "phonenumber" : "9542214969",
+        "phoneNumber" : "9542214969",
         "date" : "25/07/2019"
     },
     {
         "id": 2,
-        "firstname": "ramya",
-        "lastname" : "Penmetsa",
+        "firstName": "ramya",
+        "lastName" : "Penmetsa",
         "gender": "female",
         "email" : "ramya.penmetsa@gmail.com",
         "password" : "ramya@123",
-        "phonenumber" : "8956231475",
+        "phoneNumber" : "8956231475",
         "date" : "20/01/2019"
     }
 ]

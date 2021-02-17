@@ -11,9 +11,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class HomepageComponent implements OnInit {
   disableSelect = new FormControl(false);
   hide = true;
-  personaldetails = true;
-  fresherdetails = true;
-  professionaldetails = true;
+  personalDetails = true;
+  fresherDetails = true;
+  professionalDetails = true;
   education = true;
   form: any;
   private map = new Map<string, string[]>([
@@ -43,17 +43,17 @@ export class HomepageComponent implements OnInit {
   }
   languages = new FormControl();
   languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
-  resetfalse() {
-    this.personaldetails = false;
+  resetFalse() {
+    this.personalDetails = false;
   }
   continue() {
     this.education = false;
   }
   details() {
-    this.professionaldetails = false;
+    this.professionalDetails = false;
   }
   detail(){
-    this.fresherdetails = false;
+    this.fresherDetails = false;
   }
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
@@ -70,29 +70,29 @@ export class HomepageComponent implements OnInit {
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       email: ['', [Validators.required]],
       state: ['', [Validators.required]],
-      phonenumber: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       date: ['', [Validators.required]],
       age: ['', [Validators.required]],
-      fathername: ['', [Validators.required]],
-      mothername: ['', [Validators.required]],
+      fatherName: ['', [Validators.required]],
+      motherName: ['', [Validators.required]],
       address: ['', [Validators.required]],
       occupation: ['', [Validators.required]],
-      Graduation: ['', [Validators.required]],
-      Specilization: ['', [Validators.required]],
-      CollegeName: ['', [Validators.required]],
-      Percentage: ['', [Validators.required]],
-      SchoolName: ['', [Validators.required]],
-      CompanyName: ['', [Validators.required]],
-      Location: ['', [Validators.required]],
-      Experience: ['', [Validators.required]],
-      Technology: ['', [Validators.required]],
-      Designation:['',[Validators.required]],
-      Package:['', [Validators.required]],
+      graduation: ['', [Validators.required]],
+      specilization: ['', [Validators.required]],
+      collegeName: ['', [Validators.required]],
+      percentage: ['', [Validators.required]],
+      schoolName: ['', [Validators.required]],
+      companyName: ['', [Validators.required]],
+      location: ['', [Validators.required]],
+      experience: ['', [Validators.required]],
+      technology: ['', [Validators.required]],
+      designation:['',[Validators.required]],
+      package:['', [Validators.required]],
     });
   }
   public hasError = (controlName: string, errorName: string) => {

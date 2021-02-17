@@ -22,10 +22,10 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
-import { ClgtoolbarComponent } from './component/clgtoolbar/clgtoolbar.component';
+import { CollegetoolbarComponent } from './component/collegetoolbar/collegetoolbar.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
-import { CmntoolbarComponent } from './component/cmntoolbar/cmntoolbar.component';
+import { CommontoolbarComponent} from './component/commontoolbar/commontoolbar.component';
 import { DepartmentsComponent } from './component/departments/departments.component';
 import { VisionComponent } from './component/vision/vision.component';
 import { AcademicsComponent } from './component/academics/academics.component';
@@ -38,8 +38,8 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
     HomepageComponent,
     ToolbarComponent,
-    ClgtoolbarComponent,
-    CmntoolbarComponent,
+    CollegetoolbarComponent,
+    CommontoolbarComponent,
     DepartmentsComponent,
     VisionComponent,
     AcademicsComponent

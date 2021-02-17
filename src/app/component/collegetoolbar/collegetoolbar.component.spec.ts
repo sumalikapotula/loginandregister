@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ClgtoolbarComponent } from './clgtoolbar.component';
+import { CollegetoolbarComponent } from './collegetoolbar.component';
 
 describe('ClgtoolbarComponent', () => {
-  let component: ClgtoolbarComponent;
-  let fixture: ComponentFixture<ClgtoolbarComponent>;
+  let component: CollegetoolbarComponent;
+  let fixture: ComponentFixture<CollegetoolbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ClgtoolbarComponent ]
+      declarations: [ CollegetoolbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ClgtoolbarComponent);
+    fixture = TestBed.createComponent(CollegetoolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

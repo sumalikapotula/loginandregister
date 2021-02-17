@@ -1,17 +1,17 @@
 import { Component, OnInit } from '@angular/core';
-import PG from "../../../assets/json/academic.json";
-export interface PeriodicElement {
+import pg from "../../../assets/json/academic.json";
+export interface periodicElement {
   programme: any;
-  ApprovedIntake: any;
-  ApprovedFee: any;
+  approvedIntake: any;
+  approvedFee: any;
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {programme:'B.Tech (Civil Engineering)', ApprovedIntake: '120',ApprovedFee: 'Rs. 72,800/- per anum'},
-  {programme:'B.Tech (Electrical & Electronics Engineering)', ApprovedIntake: '120',ApprovedFee: 'Rs. 72,800/- per anum'},
-  {programme:'B.Tech (Mechanical Engineering)', ApprovedIntake: '240',ApprovedFee: 'Rs. 72,800/- per anum'},
-  {programme:'B.Tech (Electronics & Communication Engineering)', ApprovedIntake: '240',ApprovedFee: 'Rs. 72,800/- per anum'},
-  {programme:'B.Tech (Computer Science & Engineering)', ApprovedIntake: '120',ApprovedFee: 'Rs. 72,800/- per anum'},
-  {programme:'B.Tech (Information Technology)', ApprovedIntake: '60',ApprovedFee: 'Rs. 72,800/- per anum'},
+const elementData: periodicElement[] = [
+  {programme:'B.Tech (Civil Engineering)', approvedIntake: '120',approvedFee: 'Rs. 72,800/- per anum'},
+  {programme:'B.Tech (Electrical & Electronics Engineering)', approvedIntake: '120',approvedFee: 'Rs. 72,800/- per anum'},
+  {programme:'B.Tech (Mechanical Engineering)', approvedIntake: '240',approvedFee: 'Rs. 72,800/- per anum'},
+  {programme:'B.Tech (Electronics & Communication Engineering)', approvedIntake: '240',approvedFee: 'Rs. 72,800/- per anum'},
+  {programme:'B.Tech (Computer Science & Engineering)', approvedIntake: '120',approvedFee: 'Rs. 72,800/- per anum'},
+  {programme:'B.Tech (Information Technology)', approvedIntake: '60',approvedFee: 'Rs. 72,800/- per anum'},
 ];
 @Component({
   selector: 'app-academics',
@@ -20,8 +20,8 @@ const ELEMENT_DATA: PeriodicElement[] = [
 })
 export class AcademicsComponent implements OnInit {
   displayedColumns: string[] = ['programme', 'ApprovedIntake', 'ApprovedFee'];
-  dataSource = ELEMENT_DATA;
-  dataSource1:PeriodicElement[] = PG;
+  dataSource = elementData;
+  dataSource1:periodicElement[] = pg;
   constructor() { }
   ngOnInit(): void {
   }

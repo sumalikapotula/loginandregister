@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar} from '@angular/material/snack-bar';
+import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservice/user.service';
 import { HttpClient } from "@angular/common/http";
@@ -11,6 +11,8 @@ import { HttpClient } from "@angular/common/http";
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   hide = true;
   form:any;
 
@@ -25,17 +27,19 @@ export class RegisterComponent implements OnInit {
   constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar,private router: Router,private userService: UserService,private httpClient: HttpClient ) { }
   registerMessage(){
     this.snackbar.open('Registered','succesfully',{
-        duration:1500
+      duration:2500,
+      horizontalPosition: this.horizontalPosition,
+      verticalPosition: this.verticalPosition,
     });
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
-      firstname: ['', [Validators.required]],
-      lastname: ['', [Validators.required]],
+      firstName: ['', [Validators.required]],
+      lastName: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       email: ['', [Validators.required]],
       password: ['', [Validators.required]],
-      phonenumber: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       date: ['', [Validators.required]],
     });
     this.httpClient.get("../../../assets/json/data.json").subscribe(data =>{
@@ -48,19 +52,19 @@ export class RegisterComponent implements OnInit {
   }
   register(formValues: any) {
     let data = {
-      firstname: formValues.firstname,
-      lastname: formValues.lastname,
+      firstName: formValues.firstname,
+      lastName: formValues.lastname,
       gender: formValues.gender,
       email: formValues.email,
       password: formValues.password,
-      phonenumber: formValues.phonenumber,
+      phoneNumber: formValues.phonenumber,
       date: formValues.date,
     }
     if (this.form.valid) {
       console.log(data);
       this.userService.registration(data);
       console.log("data registered successfully");
-      this.router.navigate(['register']);
+      this.router.navigate(['homepage']);
     }
   }
 }

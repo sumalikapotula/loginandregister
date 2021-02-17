@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CmntoolbarComponent } from './cmntoolbar.component';
+import { CommontoolbarComponent } from './commontoolbar.component';
 
-describe('CmntoolbarComponent', () => {
-  let component: CmntoolbarComponent;
-  let fixture: ComponentFixture<CmntoolbarComponent>;
+describe('CommontoolbarComponent', () => {
+  let component:  CommontoolbarComponent;
+  let fixture: ComponentFixture< CommontoolbarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CmntoolbarComponent ]
+      declarations: [  CommontoolbarComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(CmntoolbarComponent);
+    fixture = TestBed.createComponent( CommontoolbarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
