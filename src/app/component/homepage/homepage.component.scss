@@ -21,6 +21,7 @@ body{
     color:white;
     margin-left: 20%;
     margin-top: 5%;
+    margin-bottom: 1%;
 }
 .personal1{
     display: flex;
@@ -30,28 +31,44 @@ body{
     font-weight: bold;
     color:white;
     margin-left: 20%;
-    
 }
 .main{
     width: 100%;
 }
 .Button{
-    border-radius: 8px;
-    background-color: royalblue;
+    border-radius: 20px;
+    background-color: rgb(5, 159, 206);
     color:white;
-    box-shadow: none;
-    height: 30px;
-    display: flex;
-    align-items:flex-end;
-    justify-content:flex-end;
-    margin-left: 53%;
+    height: 35px;
+    margin-left: 27%;
+}
+.ButtonA{
+    background-color: rgb(5, 159, 206);
+    color:white;
+    margin-left: 26%;
+    height: 35px;
+    border-radius: 20px;
 }
 .ButtonC{
-    background-color: royalblue;
+    background-color: rgb(5, 159, 206);
     color:white;
-    margin-left: 53%;
-    height: 30px;
+    margin-left: 49%;
+    height: 35px;
     border-radius: 20px;
+}
+.ButtonB{
+    background-color: rgb(5, 159, 206);
+    color:white;
+    height: 35px;
+    border-radius: 20px;
+    margin-left: 20%;
+}
+.ButtonD{
+    border-radius: 20px;
+    background-color: rgb(5, 159, 206);
+    color:white;
+    height: 35px;
+    margin-left: 24%;
 }
 .btn{
     justify-content: space-between;

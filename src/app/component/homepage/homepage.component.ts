@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
-import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-homepage',
@@ -9,6 +9,8 @@ import { MatSnackBar } from '@angular/material/snack-bar';
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  horizontalPosition: MatSnackBarHorizontalPosition = 'center';
+  verticalPosition: MatSnackBarVerticalPosition = 'top';
   disableSelect = new FormControl(false);
   hide = true;
   personalDetails = true;
@@ -17,24 +19,24 @@ export class HomepageComponent implements OnInit {
   education = true;
   form: any;
   private map = new Map<string, string[]>([
-    ['B.tech',['ECE','MECH','CSE','CIVIL','IT']],
-    ['Degree',['B.Sc','B.A']],
+    ['B.tech', ['ECE', 'MECH', 'CSE', 'CIVIL', 'IT']],
+    ['Degree', ['B.Sc', 'B.A']],
   ]);
-  graduation:any;
-  specilization:any;
+  graduation: any;
+  specilization: any;
   get graduate(): string[] {
     return Array.from(this.map.keys());
   }
-  get  specilize(): string[] | undefined {
+  get specilize(): string[] | undefined {
     return this.map.get(this.graduation);
   }
   private map1 = new Map<string, string[]>([
-    ['Intermediate',['M.P.C','Bi.P.C','M.E.C','H.E.C']],
-    ['Vocational',['M.L.T']],
-    ['ITI',['Fitter','Electrician']],
+    ['Intermediate', ['M.P.C', 'Bi.P.C', 'M.E.C', 'H.E.C']],
+    ['Vocational', ['M.L.T']],
+    ['ITI', ['Fitter', 'Electrician']],
   ]);
-  intermediate:any;
-  course:any;
+  intermediate: any;
+  course: any;
   get inter(): string[] {
     return Array.from(this.map1.keys());
   }
@@ -44,15 +46,30 @@ export class HomepageComponent implements OnInit {
   languages = new FormControl();
   languagesList: string[] = ['ASP.Net', 'Angular', 'Java', 'C#', 'HTML', 'CSS'];
   resetFalse() {
-    this.personalDetails = false;
+    if (this.personalDetails == true) {
+      this.personalDetails = false;
+    }
+    else {
+      this.personalDetails = true;
+    }
   }
   continue() {
-    this.education = false;
+    if (this.education == true) {
+      this.education = false;
+    }
+    else {
+      this.education = true;
+    }
   }
   details() {
-    this.professionalDetails = false;
+    if (this.professionalDetails == true) {
+      this.professionalDetails = false;
+    }
+    else {
+      this.professionalDetails = true;
+    }
   }
-  detail(){
+  detail() {
     this.fresherDetails = false;
   }
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
@@ -62,11 +79,22 @@ export class HomepageComponent implements OnInit {
     }
     return '';
   }
-  constructor(private formBuilder: FormBuilder, private snackbar: MatSnackBar) { }
-  openSnackBar() {
-    this.snackbar.open('Details submitted', 'succesfully', {
-      duration: 1500
-    });
+  constructor(private formBuilder: FormBuilder, private display: MatSnackBar) { }
+  message() {
+    if (this.form.valid) {
+      this.display.open('Details submitted', 'succesfully', {
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
+    else {
+      this.display.open('hello!', 'please enter details', {
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -91,14 +119,14 @@ export class HomepageComponent implements OnInit {
       location: ['', [Validators.required]],
       experience: ['', [Validators.required]],
       technology: ['', [Validators.required]],
-      designation:['',[Validators.required]],
-      package:['', [Validators.required]],
+      designation: ['', [Validators.required]],
+      package: ['', [Validators.required]],
     });
   }
   public hasError = (controlName: string, errorName: string) => {
     return this.form.controls[controlName].hasError(errorName);
   }
-  register(formValues: any) {
+  submit(formValues: any) {
   }
 }
 

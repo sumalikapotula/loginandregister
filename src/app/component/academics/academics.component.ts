@@ -19,7 +19,7 @@ const elementData: periodicElement[] = [
   styleUrls: ['./academics.component.scss']
 })
 export class AcademicsComponent implements OnInit {
-  displayedColumns: string[] = ['programme', 'ApprovedIntake', 'ApprovedFee'];
+  displayedColumns: string[] = ['programme', 'approvedIntake', 'approvedFee'];
   dataSource = elementData;
   dataSource1:periodicElement[] = pg;
   constructor() { }

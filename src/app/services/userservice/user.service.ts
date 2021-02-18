@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
-  login(data: any) {
-    data = {
+  login(loginData: any) {
+    loginData = {
       email: "sumalika.potula@quixy.com",
       password: "suma@1234"
     }
-    return data;
+    return loginData;
   }
   registration(data: any) {
     data = {

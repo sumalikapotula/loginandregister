@@ -43,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     DepartmentsComponent,
     VisionComponent,
     AcademicsComponent
+    
   ],
   imports: [
     BrowserModule,

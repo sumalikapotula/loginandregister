@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatCalendarCellClassFunction } from '@angular/material/datepicker';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition,} from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition, } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/services/userservice/user.service';
 import { HttpClient } from "@angular/common/http";
@@ -14,7 +14,7 @@ export class RegisterComponent implements OnInit {
   horizontalPosition: MatSnackBarHorizontalPosition = 'center';
   verticalPosition: MatSnackBarVerticalPosition = 'top';
   hide = true;
-  form:any;
+  form: any;
 
   dateClass: MatCalendarCellClassFunction<Date> = (cellDate, view) => {
     if (view === 'month') {
@@ -24,13 +24,22 @@ export class RegisterComponent implements OnInit {
     return '';
   }
   info: any = [];
-  constructor(private formBuilder: FormBuilder,private snackbar:MatSnackBar,private router: Router,private userService: UserService,private httpClient: HttpClient ) { }
-  registerMessage(){
-    this.snackbar.open('Registered','succesfully',{
-      duration:2500,
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
+  constructor(private formBuilder: FormBuilder, private display: MatSnackBar, private router: Router, private userService: UserService, private httpClient: HttpClient) { }
+  registerMessage() {
+    if (this.form.valid) {
+      this.display.open('Registered', 'succesfully', {
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
+    else {
+      this.display.open('hello!','please enter details' ,{
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -42,7 +51,7 @@ export class RegisterComponent implements OnInit {
       phoneNumber: ['', [Validators.required]],
       date: ['', [Validators.required]],
     });
-    this.httpClient.get("../../../assets/json/data.json").subscribe(data =>{
+    this.httpClient.get("../../../assets/json/data.json").subscribe(data => {
       console.log(data);
       this.info = data;
     })
@@ -61,10 +70,8 @@ export class RegisterComponent implements OnInit {
       date: formValues.date,
     }
     if (this.form.valid) {
-      console.log(data);
       this.userService.registration(data);
-      console.log("data registered successfully");
-      this.router.navigate(['homepage']);
+      this.router.navigate(['/homepage']);
     }
   }
 }

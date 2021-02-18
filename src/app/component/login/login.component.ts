@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { MatSnackBar,MatSnackBarHorizontalPosition,MatSnackBarVerticalPosition} from '@angular/material/snack-bar';
+import { MatSnackBar, MatSnackBarHorizontalPosition, MatSnackBarVerticalPosition } from '@angular/material/snack-bar';
 import { UserService } from '../../services/userservice/user.service';
 import { Router } from '@angular/router';
 
@@ -16,13 +16,22 @@ export class LoginComponent implements OnInit {
   @Input() password: any;
   hide = true;
   form: any;
-  constructor(private formBuilder: FormBuilder,private router: Router, private snackbar: MatSnackBar,private userService: UserService) { }
+  constructor(private formBuilder: FormBuilder, private router: Router, private display: MatSnackBar, private userService: UserService) { }
   loginMessage() {
-    this.snackbar.open('logged In', 'successfully', {
-      duration: 2500,
-      horizontalPosition: this.horizontalPosition,
-      verticalPosition: this.verticalPosition,
-    });
+    if (this.form.valid) {
+      this.display.open('logged In', 'successfully', {
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
+    else {
+      this.display.open('hello!','please enter valid details' ,{
+        duration: 2500,
+        horizontalPosition: this.horizontalPosition,
+        verticalPosition: this.verticalPosition,
+      });
+    }
   }
   ngOnInit(): void {
     this.form = this.formBuilder.group({
@@ -34,14 +43,13 @@ export class LoginComponent implements OnInit {
     return this.form.controls[controlName].hasError(errorName);
   }
   login(formValues: any) {
-    let data = {
+    let loginData = {
       email: formValues.email,
       password: formValues.password
     }
     if (this.form.valid) {
-      console.log(data);
-      this.userService.login(data);
-      this.router.navigate(['homepage'])
+      this.userService.login(loginData);
+      this.router.navigate(['/collegetool'])
     }
   }
 }

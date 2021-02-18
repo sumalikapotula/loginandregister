@@ -1,7 +1,7 @@
 <body>
     <app-toolbar></app-toolbar>
     <div class="main">
-        <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="register(form.value)">
+        <form [formGroup]="form" autocomplete="off" novalidate (ngSubmit)="submit(form.value)">
             <div *ngIf="personalDetails">
                 <div class="personal">PERSONAL INFORMATION:</div>
                 <div class="btn1">
@@ -119,7 +119,9 @@
                     </mat-form-field>
                 </div>
                 <div>
-                    <button class="ButtonC" mat-stroked-button *ngIf="!personalDetails"
+                    <button class="ButtonB" mat-stroked-button *ngIf="!personalDetails"
+                        (click)="resetFalse()">BACK</button>
+                    <button class="ButtonA" mat-stroked-button *ngIf="!personalDetails"
                         (click)="continue()">CONTINUE</button>
                 </div>
             </div>
@@ -215,8 +217,10 @@
                     <mat-radio-button value="1" *ngIf="fresherDetails" (click)="detail()">Fresher</mat-radio-button>
                     <mat-radio-button value="2" (click)="details()">Experienced</mat-radio-button>
                 </mat-radio-group>
-                <div class="btn">
-                    <button class="Button">SUBMIT</button>
+                <div>
+                    <button class="ButtonB" mat-stroked-button *ngIf="!personalDetails"
+                        (click)="continue()">BACK</button>
+                    <button mat-stroked-button class="Button">SUBMIT</button>
                 </div>
             </div>
             <div *ngIf="!professionalDetails">
@@ -245,7 +249,8 @@
                         <mat-label>Technology</mat-label>
                         <input matInput type="text" placeholder="Technology" formControlName="technology" required>
                         <mat-select>
-                            <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}</mat-option>
+                            <mat-option *ngFor="let language of languagesList" [value]="language">{{language}}
+                            </mat-option>
                         </mat-select>
                         <mat-error *ngIf="hasError('technology','required')">Technology is required</mat-error>
                     </mat-form-field>
@@ -275,8 +280,10 @@
                         <mat-error *ngIf="hasError('package','required')">Package is required</mat-error>
                     </mat-form-field>
                 </div>
-                <div class="btn">
-                    <button class="Button" mat-stroked-button (click)="openSnackBar()">SUBMIT DETAILS</button>
+                <div >
+                    <button mat-stroked-button color="primary" class="ButtonB" *ngIf="!personalDetails"
+                        (click)="details()">Back</button>
+                    <button [routerLink]="['/login']" class="ButtonD" mat-stroked-button (click)="message()">SUBMIT DETAILS</button>
                 </div>
             </div>
         </form>
