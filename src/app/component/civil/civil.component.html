@@ -1,0 +1,71 @@
+<body>
+    <app-commontoolbar></app-commontoolbar>
+    <div class="mmm">
+        <div class="image">
+            <img src="../../../assets/Images/civ.jpg"><br>
+            <button mat-stroked-button color="primary" class="btna" (click)="continue()">About Civil</button><br>
+            <button mat-stroked-button color="primary" class="btnb" (click)="vision()">Vission,Mission</button><br>
+            <button mat-stroked-button color="primary" class="btnc" (click)="staff()">Staff</button><br>
+        </div>
+        <div class="text" *ngIf="about">
+            <h2 class="abt"> ABOUT THE DEPARTMENT</h2>
+            <p>
+                Pragati Engineering College started an undergraduate (B.Tech.) program in Civil Engineering in the year
+                2012, in order to meet<br>the educational needs of the construction industry. The Department of Civil
+                Engineering caters to the regional and global human<br>resource requirements. The institution is located
+                in
+                the widespread area and therefore the students and teachers of the <br>department get benefited through
+                theoretical and field interaction.
+            </p>
+            <p>
+                he department is committed to strengthen the academic, research and functional abilities of the
+                students, in order to enable them<br> to stand as competent and versatile professionals after
+                graduation.
+                The department strives to enhance research activity in the <br>department, thereby creating competent
+                intellectual resources to the students. Civil Engineering is one of the oldest and ancient<br> branch of
+                engineering which houses a lot of practical knowledge which enhances the day to day life of mankind.
+            </p>
+            <p>
+                The department building houses well-equipped laboratories. The department conducts various events for
+                revealing scientific,<br> engineering, and technological advances to students. The students participate
+                in
+                events and national level contests, conducted by <br>various institutes.Of all the faculty thrives very
+                hard
+                and give their utmost knowledge for the overall development of the student.
+            </p>
+        </div>
+        <div class="text" *ngIf="mission && !about">
+            <h2 class="abt"> VISION OF THE DEPARTMENT</h2>
+            <p>
+                Impart ethical technical knowledge of global standards in the field of Civil Engineering in<br>order to
+                meet new challenges in Professional and Research Environment.
+            </p>
+            <h2 class="abt1"> MISSION OF THE DEPARTMENT</h2>
+            <p>
+                To train professionals in the field of Civil Engineering, who can contribute to the Industry, Research &
+                Development and also<br> shoulder the social responsibility.<br>
+                To provide state of art resources that contribute to congenial learning environment.<br>
+                To encourage faculty and students to pursue higher education and various career enhancing courses.<br>
+            </p>
+        </div>
+        <div class="text" *ngIf="teacher && !mission && !about">
+            <h2 class="abt2">TEACHING STAFF</h2>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> S:No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name Of Faculty</th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="designation">
+                    <th mat-header-cell *matHeaderCellDef> Designation </th>
+                    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</body>

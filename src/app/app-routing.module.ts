@@ -7,6 +7,11 @@ import { CollegetoolbarComponent } from './component/collegetoolbar/collegetoolb
 import { DepartmentsComponent } from './component/departments/departments.component';
 import { VisionComponent } from './component/vision/vision.component';
 import { AcademicsComponent } from './component/academics/academics.component';
+import { CollegeLibraryComponent } from './component/college-library/college-library.component';
+import { MechanicalComponent } from './component/mechanical/mechanical.component';
+import { ElectronicsComponent } from './component/electronics/electronics.component';
+import { CivilComponent } from './component/civil/civil.component';
+import { ComputersComponent } from './component/computers/computers.component';
 
 const routes: Routes = [
   {path:"login",component:LoginComponent},
@@ -15,7 +20,12 @@ const routes: Routes = [
   {path:"collegetool",component:CollegetoolbarComponent},
   {path:"department",component:DepartmentsComponent},
   {path:"vision",component:VisionComponent},
-  {path:"academics",component:AcademicsComponent}
+  {path:"academics",component:AcademicsComponent},
+  {path:"library",component:CollegeLibraryComponent},
+  {path:"mech",component:MechanicalComponent},
+  {path:"electronics",component:ElectronicsComponent},
+  {path:"civil",component:CivilComponent},
+  {path:"computers",component:ComputersComponent}
 ];
 
 @NgModule({

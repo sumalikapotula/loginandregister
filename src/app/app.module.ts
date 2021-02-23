@@ -31,6 +31,11 @@ import { VisionComponent } from './component/vision/vision.component';
 import { AcademicsComponent } from './component/academics/academics.component';
 import { MatTableModule } from '@angular/material/table';
 import { HttpClientModule } from '@angular/common/http';
+import { CollegeLibraryComponent } from './component/college-library/college-library.component';
+import { MechanicalComponent } from './component/mechanical/mechanical.component';
+import { ElectronicsComponent } from './component/electronics/electronics.component';
+import { CivilComponent } from './component/civil/civil.component';
+import { ComputersComponent } from './component/computers/computers.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +47,12 @@ import { HttpClientModule } from '@angular/common/http';
     CommontoolbarComponent,
     DepartmentsComponent,
     VisionComponent,
-    AcademicsComponent
+    AcademicsComponent,
+    CollegeLibraryComponent,
+    MechanicalComponent,
+    ElectronicsComponent,
+    CivilComponent,
+    ComputersComponent
     
   ],
   imports: [

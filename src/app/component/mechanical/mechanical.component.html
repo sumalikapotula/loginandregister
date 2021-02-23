@@ -1,0 +1,79 @@
+<body>
+    <app-commontoolbar></app-commontoolbar>
+    <div class="mmm">
+        <div class="image">
+            <img src="../../../assets/Images/MECH.jpg"><br>
+            <button mat-stroked-button color="primary" class="btna" (click)="continue()">About Mechanical</button><br>
+            <button mat-stroked-button color="primary" class="btnb" (click)="vision()">Vission,Mission</button><br>
+            <button mat-stroked-button color="primary" class="btnc" (click)="staff()">Staff</button><br>
+        </div>
+        <div class="text" *ngIf="about">
+            <h2 class="abt"> ABOUT  THE  DEPARTMENT</h2>
+            <p>Pragati Engineering College started an undergraduate (B.Tech.) program in Mechanical Engineering in the
+                year 2004, in order to<br> meet the educational needs of the K.G. basin. The Department of Mechanical
+                Engineering
+                caters to the regional and global<br> human resource requirements. The students of this department stood
+                as
+                college toppers in academics. The institution is located in<br> the industrial corridor and therefore
+                the
+                students and teachers of the department get benefited through Industry-Institute-<br>Interaction.
+            </p>
+            <p>
+                The department is committed to strengthen the academic, research and functional abilities of the
+                students, in order to enable <br>them to stand as competent and versatile professionals after
+                graduation.
+                The department strives to enhance research activity in<br> the department, thereby creating competent
+                intellectual resources to the students.
+            </p>
+            <p>
+                The department building occupies an area of 27,500 SFT and houses well-equipped laboratories. The
+                department conducts <br>various events for revealing scientific, engineering, and technological advances
+                to
+                students. The students participate in events and <br>national level contests, conducted by various
+                institutes. The members of faculty have completed sponsored research projects,<br> amounting to a net
+                worth
+                of Rs. 21 lakhs, during the past three years.
+            </p>
+        </div>
+        <div class="text" *ngIf="mission && !about">
+            <h2 class="abt"> VISION OF THE DEPARTMENT</h2>
+            <p>
+                To be a globally renowned school of mechanical engineering in transforming individuals into professional
+                engineers with world <br>class competency and state-of-the-art research to fulfil the technological
+                needs of
+                the society.
+            </p>
+            <h2 class="abt1"> MISSION OF THE DEPARTMENT</h2>
+            <p>
+                The department of mechanical engineering strives.<br>
+                To prepare, educate and guide students by the faculty from all domains of mechanical engineering in
+                enhancing their skills.<br>
+                To establish and utilize world class resources and infrastructure to impart quality education and
+                promote Research aptitude <br>among faculty and students to pursue higher education in diverse
+                fields.<br>
+                To explore the students’ knowledge gradually through industrial interaction for increasing their
+                placement potential to fulfil the <br>basic needs of the society with ethical and social
+                responsibility.<br>
+            </p>
+        </div>
+        <div class="text" *ngIf="teacher && !mission && !about">
+            <h2 class="abt2">TEACHING STAFF</h2>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> S:No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name Of Faculty</th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="designation">
+                    <th mat-header-cell *matHeaderCellDef> Designation </th>
+                    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</body>

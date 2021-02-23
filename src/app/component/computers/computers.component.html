@@ -1,0 +1,89 @@
+<body>
+    <app-commontoolbar></app-commontoolbar>
+    <div class="mmm">
+        <div class="image">
+            <img src="../../../assets/Images/CSE.jpg"><br>
+            <button mat-stroked-button color="primary" class="btna" (click)="continue()">About Computers</button><br>
+            <button mat-stroked-button color="primary" class="btnb" (click)="vision()">Vission,Mission</button><br>
+            <button mat-stroked-button color="primary" class="btnc" (click)="staff()">Staff</button><br>
+        </div>
+        <div class="text" *ngIf="about">
+            <h2 class="abt"> ABOUT THE DEPARTMENT</h2>
+            <p>The faculty is a blend of Experienced Academicians and Industry professionals having different
+                specializations in Computer<br>Science and Engineering to impart their expertise through B.Tech program.
+                The department offers Post Graduate programs in <br>M.Tech with specialization in Computer Science and
+                Engineering, and Computer Science.
+            </p>
+            <p>
+                Started B.Tech in 2001-02 with an initial intake of 60<br>
+                From 2006-07 onwards the intake of B.Tech is increased to 120<br>
+                Started B.Tech-2nd Shift in 2015-16 with an intake of 60<br>
+                Present intake for B.Tech is 180<br>
+                Started M.Tech (CSE) in 2007-08 with an intake of 18<br>
+                Started M.Tech (CS) in 2010-11 with an intake of 18<br>
+                Recognition as R & D Center by JNTUK, Kakinada
+            </p>
+            <p>
+                The department has excellent infrastructure to support the teaching learning process. The class rooms of
+                the department have<br>the ICT infrastructure. The faculty of the department utilizes these systems to
+                deliver lectures effectively. A new training facility<br>named e-class room was developed in the year
+                2009.
+                The latest equipment required for video conferencing and remote lecture<br> delivery are available in
+                the
+                e-class room. The department of CSE also maintains the MOODLE, the learning management<br> system for
+                electronic distribution of lecture material, online references and question papers.<br>
+
+                The department has laboratories to serve the teaching and research needs of the students and faculty
+                members. The laboratories<br> of the department have substantial computing resources that include the
+                latest
+                hardware and software. The laboratories are<br> equipped with the computers of latest configuration. All
+                the
+                laboratory computers are connected to the campus network using hi-<br>speed Local Area Network. A
+                dedicated
+                leased line provides round-the clock Internet access to all the laboratory computers. <br>The department
+                also maintains a dedicated lab for improving the communication skills of the students. The college and
+                the <br>department are well served by the central library. The central library has more than 2400 titles
+                related to Computer Science <br>and Engineering discipline. The central library has online subscription
+                to
+                various e-journals and INDEST, J-GATE, N-LIST and <br>DELNET consortiums. The subscription provides
+                online
+                access to reputed engineering journals from professional societies. <br>There is also a dedicated
+                department
+                library to serve the needs of the department.
+            </p>
+        </div>
+        <div class="text" *ngIf="mission && !about">
+            <h2 class="abt"> VISION OF THE DEPARTMENT</h2>
+            <p>
+                To emerge as a center of technical expertise in the field of computer science and engineering by
+                producing globally competent<br>professionals with technical & research capabilities, ethical values and
+                team spirit.
+            </p>
+            <h2 class="abt1"> MISSION OF THE DEPARTMENT</h2>
+            <p>
+                To produce competent software professionals. <br>
+                To induce application oriented and research capabilities in students for the betterment of society.<br>
+                To inculcate ethics and human values in students to adapt to the dynamism in the field of computing technology.<br>
+            </p>
+        </div>
+        <div class="text" *ngIf="teacher && !mission && !about">
+            <h2 class="abt2">TEACHING STAFF</h2>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> S:No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name Of Faculty</th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="designation">
+                    <th mat-header-cell *matHeaderCellDef> Designation </th>
+                    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</body>

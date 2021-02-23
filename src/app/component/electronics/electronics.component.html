@@ -1,0 +1,73 @@
+<body>
+    <app-commontoolbar></app-commontoolbar>
+    <div class="mmm">
+        <div class="image">
+            <img src="../../../assets/Images/ECE.jpg"><br>
+            <button mat-stroked-button color="primary" class="btna" (click)="continue()">About Electronics</button><br>
+            <button mat-stroked-button color="primary" class="btnb" (click)="vision()">Vission,Mission</button><br>
+            <button mat-stroked-button color="primary" class="btnc" (click)="staff()">Staff</button><br>
+        </div>
+        <div class="text" *ngIf="about">
+            <h2 class="abt"> ABOUT THE DEPARTMENT</h2>
+            <p>Department of Electronics and Communication Engineering was established in the year 2001 for imparting a
+                state-of the- art and<br>quality education, training and research in the field of Electronics and
+                Communication Engineering and allied areas. The<br> department offers a Bachelor’s program with an
+                initial
+                intake of 60 students in the year 2001, subsequently increased to 300<br> students per year from the
+                academic year 2015 and Master’s programmes in VLSI System Design and Embedded Systems<br> with an intake
+                of
+                18 students each.
+            </p>
+            <p>
+                Well Equipped labs and the infrastructure are regularly upgraded not only to serve the purpose of the
+                curriculum prescribed but<br> also facilitate to carry out innovative projects to challenge the
+                fast-changing needs of the society besides undertaking R&D <br>activities in various fields. We provide
+                a
+                very informal atmosphere between faculty and students. ECE department has always <br>been known for
+                creating
+                an ambience where scholarship flourishes. Faculty members of our department are not only engaged in<br>
+                trending technology research but are also very passionate about teaching and learning process.
+            </p>
+            <p>
+                Faculty and students of ECE are encouraged to do NPTEL certifications in various subjects and few of
+                them got Top 1%, Top <br>2% and Top 5% and many got ELITE.
+            </p>
+        </div>
+        <div class="text" *ngIf="mission && !about">
+            <h2 class="abt"> VISION OF THE DEPARTMENT</h2>
+            <p>
+                To be an acknowledged Leader in providing quality education, training and research in area of
+                Electronics and Communication<br>Engineering to meet the industrial and Societal needs
+            </p>
+            <h2 class="abt1"> MISSION OF THE DEPARTMENT</h2>
+            <p>
+                The department of electronics engineering strives.<br>
+                To facilitate students with a state of the art infrastructure learning environment and value based
+                education to improve technical <br>knowledge and skills for continuous learning process.<br>
+                To impart high quality education with well qualified faculty to enable students meet the challenges of
+                the industry at global level.<br>
+                To promote innovation and active industry institute interaction by facilitating the students to improve
+                their leadership and<br>entrepreneurship skills with ethical values.<br>
+            </p>
+        </div>
+        <div class="text" *ngIf="teacher && !mission && !about">
+            <h2 class="abt2">TEACHING STAFF</h2>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+                <ng-container matColumnDef="position">
+                    <th mat-header-cell *matHeaderCellDef> S:No. </th>
+                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                </ng-container>
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef> Name Of Faculty</th>
+                    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+                </ng-container>
+                <ng-container matColumnDef="designation">
+                    <th mat-header-cell *matHeaderCellDef> Designation </th>
+                    <td mat-cell *matCellDef="let element"> {{element.designation}} </td>
+                </ng-container>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </div>
+    </div>
+</body>
